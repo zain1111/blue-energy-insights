@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
 import { SITE } from "@/config/site";
 
-const LOGO_SRC = "/KBE.png";
+const LOGO_SRC = "/logoKBE.png";
 
 const navItems = [
   { label: "Home", to: "/" },
