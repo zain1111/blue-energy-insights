@@ -8,7 +8,7 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ title, subtitle, children, videoUrl }: HeroSectionProps) => {
-  const defaultVideo = "https://videos.pexels.com/video-files/3194277/3194277-uhd_2560_1440_30fps.mp4";
+  const defaultVideo = "https://garberbrosinc.com/assets/videos/About.mp4";
 
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
