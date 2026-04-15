@@ -15,7 +15,7 @@ const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background border-b border-border">
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
@@ -28,7 +28,7 @@ const Navbar = () => {
             <li key={item.to}>
               <Link
                 to={item.to}
-                className={`font-heading text-lg font-semibold tracking-wide transition-colors hover:text-primary ${
+                className={`font-heading text-sm font-bold tracking-[0.15em] uppercase transition-colors hover:text-primary ${
                   location.pathname === item.to ? "text-primary" : "text-foreground"
                 }`}
               >
@@ -66,7 +66,7 @@ const Navbar = () => {
                 <Link
                   to={item.to}
                   onClick={() => setMobileOpen(false)}
-                  className={`block font-heading text-lg font-semibold py-2 ${
+                  className={`block font-heading text-sm font-bold tracking-[0.15em] uppercase py-2 ${
                     location.pathname === item.to ? "text-primary" : "text-foreground"
                   }`}
                 >
