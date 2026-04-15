@@ -1,16 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import ServiceCard from "@/components/ServiceCard";
+import Footer from "@/components/Footer";
+import { services } from "@/data/services";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen">
+      <Navbar />
+
+      {/* Hero */}
+      <HeroSection
+        title="Kashmir Blue Energy"
+        subtitle="Expert oilfield services delivering reliable well solutions across the energy sector."
+      />
+
+      {/* Services Grid */}
+      <section className="py-20 bg-muted">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-center text-foreground mb-4">
+            Our Services
+          </h2>
+          <p className="text-muted-foreground text-center max-w-xl mx-auto mb-12">
+            Comprehensive oilfield solutions tailored to your needs.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service) => (
+              <ServiceCard key={service.id} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
