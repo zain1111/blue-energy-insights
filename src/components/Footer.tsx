@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SITE } from "@/config/site";
 
 const Footer = () => (
   <footer className="bg-card py-16">
@@ -23,7 +24,8 @@ const Footer = () => (
             <ul className="space-y-2">
               <li><Link to="/" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Home</Link></li>
               <li><Link to="/services" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Services</Link></li>
-              <li><Link to="/about" className="text-muted-foreground hover:text-foreground text-sm transition-colors">About</Link></li>
+              <li><Link to="/safety" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Safety</Link></li>
+              <li><Link to="/careers" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Careers</Link></li>
               <li><Link to="/contact" className="text-muted-foreground hover:text-foreground text-sm transition-colors">Contact</Link></li>
             </ul>
           </div>
@@ -32,8 +34,8 @@ const Footer = () => (
               Contact
             </h4>
             <ul className="space-y-2">
-              <li className="text-muted-foreground text-sm">+1 (234) 567-890</li>
-              <li className="text-muted-foreground text-sm">info@kashmirblue.com</li>
+              <li className="text-muted-foreground text-sm">{SITE.phoneDisplay}</li>
+              <li className="text-muted-foreground text-sm">{SITE.salesEmail}</li>
             </ul>
           </div>
         </div>

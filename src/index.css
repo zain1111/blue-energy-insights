@@ -6,56 +6,51 @@
 
 @layer base {
   :root {
-    /* Dark navy base — inspired by Nine Energy */
-    --background: 210 30% 8%;
-    --foreground: 0 0% 95%;
+    /* Light base — Kashmir Blue brand */
+    --background: 210 25% 98%;
+    --foreground: 210 30% 12%;
 
-    --card: 210 28% 12%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 30% 12%;
 
-    --popover: 210 28% 12%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 30% 12%;
 
-    /* Kashmir Blue brand */
     --primary: 205 68% 42%;
     --primary-foreground: 0 0% 100%;
 
-    /* Light blue secondary */
-    --secondary: 205 38% 76%;
-    --secondary-foreground: 210 30% 8%;
+    --secondary: 210 25% 93%;
+    --secondary-foreground: 210 30% 12%;
 
-    /* Muted dark */
-    --muted: 210 20% 15%;
-    --muted-foreground: 210 10% 60%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 210 12% 42%;
 
-    /* Accent — a subtle green/teal from brand */
-    --accent: 144 12% 50%;
+    --accent: 144 30% 40%;
     --accent-foreground: 0 0% 100%;
 
-    /* Highlight — yellow/lime for active indicators */
-    --highlight: 66 100% 50%;
+    --highlight: 66 90% 44%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 20% 18%;
-    --input: 210 20% 18%;
+    --border: 210 18% 88%;
+    --input: 210 18% 88%;
     --ring: 205 68% 42%;
 
     --radius: 0.5rem;
 
-    --hero-overlay: 210 30% 8%;
+    /* Darken video hero only — keeps light copy readable on overlay */
+    --hero-overlay: 210 32% 14%;
 
-    /* Bright blue for color block sections */
-    --block-bright: 199 100% 50%;
+    --block-bright: 199 95% 48%;
 
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 210 30% 8%;
+    --sidebar-background: 210 25% 98%;
+    --sidebar-foreground: 210 30% 12%;
     --sidebar-primary: 205 68% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 66 100% 50%;
-    --sidebar-accent-foreground: 210 30% 8%;
-    --sidebar-border: 210 20% 90%;
+    --sidebar-accent: 66 90% 44%;
+    --sidebar-accent-foreground: 210 30% 12%;
+    --sidebar-border: 210 18% 88%;
     --sidebar-ring: 205 68% 42%;
   }
 }

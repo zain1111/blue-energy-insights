@@ -4,24 +4,34 @@ interface HeroSectionProps {
   title: string;
   subtitle?: string;
   children?: ReactNode;
+  /** When set, shows this image instead of video */
+  imageUrl?: string;
   videoUrl?: string;
 }
 
-const HeroSection = ({ title, subtitle, children, videoUrl }: HeroSectionProps) => {
+const HeroSection = ({ title, subtitle, children, videoUrl, imageUrl }: HeroSectionProps) => {
   const defaultVideo = "https://garberbrosinc.com/assets/videos/About.mp4";
 
   return (
-    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src={videoUrl || defaultVideo} type="video/mp4" />
-      </video>
+    <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-16">
+      {imageUrl ? (
+        <img
+          src={imageUrl}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          aria-hidden
+        />
+      ) : (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src={videoUrl || defaultVideo} type="video/mp4" />
+        </video>
+      )}
 
       {/* Overlay */}
       <div className="absolute inset-0 hero-overlay" />
@@ -32,7 +42,7 @@ const HeroSection = ({ title, subtitle, children, videoUrl }: HeroSectionProps) 
           {title}
         </h1>
         {subtitle && (
-          <p className="text-lg md:text-xl text-secondary max-w-2xl mx-auto mb-8">
+          <p className="text-lg md:text-xl text-primary-foreground/85 max-w-2xl mx-auto mb-8">
             {subtitle}
           </p>
         )}

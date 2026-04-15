@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Phone, Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import { SITE } from "@/config/site";
+
+const LOGO_SRC = "/KBE.png";
 
 const navItems = [
   { label: "Home", to: "/" },
   { label: "Services", to: "/services" },
-  { label: "About", to: "/about" },
+  { label: "Safety", to: "/safety" },
+  { label: "Careers", to: "/careers" },
   { label: "Contact", to: "/contact" },
 ];
 
@@ -19,7 +22,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between h-16 px-4 lg:px-8">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Kashmir Blue Energy" className="h-12 w-auto" />
+          <img src={LOGO_SRC} alt="Kashmir Blue Energy" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Nav */}
@@ -40,11 +43,11 @@ const Navbar = () => {
 
         {/* Phone */}
         <a
-          href="tel:+1234567890"
+          href={`tel:${SITE.phoneTel}`}
           className="hidden md:flex items-center gap-2 text-primary font-heading font-semibold text-lg"
         >
           <Phone className="h-5 w-5" />
-          +1 (234) 567-890
+          {SITE.phoneDisplay}
         </a>
 
         {/* Mobile toggle */}
@@ -76,11 +79,11 @@ const Navbar = () => {
             ))}
           </ul>
           <a
-            href="tel:+1234567890"
+            href={`tel:${SITE.phoneTel}`}
             className="flex items-center gap-2 text-primary font-heading font-semibold text-lg mt-3"
           >
             <Phone className="h-5 w-5" />
-            +1 (234) 567-890
+            {SITE.phoneDisplay}
           </a>
         </div>
       )}

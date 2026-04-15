@@ -64,13 +64,13 @@ const Services = () => {
               className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 p-6"
             >
               <h3 className="font-heading text-xl font-bold text-primary-foreground mb-2">{box.title}</h3>
-              <p className="text-secondary text-sm">{box.desc}</p>
+              <p className="text-primary-foreground/80 text-sm">{box.desc}</p>
             </motion.div>
           ))}
         </div>
       </HeroSection>
 
-      {/* Services Detail Section — white sidebar, dark content */}
+      {/* Services Detail Section — sidebar + alternating panels */}
       <section className="py-0">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-0">
           {/* Nine-Energy-style sidebar: clean white bg, text links, accent left border */}
@@ -100,7 +100,7 @@ const Services = () => {
             </div>
           </aside>
 
-          {/* Detail panels — dark background */}
+          {/* Detail panels — alternating surface */}
           <div className="flex-1 py-10 lg:pl-10">
             {services.map((s, i) => {
               const Icon = s.icon;

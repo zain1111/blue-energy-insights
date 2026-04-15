@@ -15,7 +15,7 @@ const Index = () => {
         subtitle="Expert oilfield services delivering reliable well solutions across the energy sector."
       />
 
-      {/* Services Section — dark background */}
+      {/* Services Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
