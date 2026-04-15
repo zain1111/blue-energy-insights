@@ -6,46 +6,57 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 210 20% 12%;
+    /* Dark navy base — inspired by Nine Energy */
+    --background: 210 30% 8%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 20% 12%;
+    --card: 210 28% 12%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 20% 12%;
+    --popover: 210 28% 12%;
+    --popover-foreground: 0 0% 95%;
 
+    /* Kashmir Blue brand */
     --primary: 205 68% 42%;
     --primary-foreground: 0 0% 100%;
 
+    /* Light blue secondary */
     --secondary: 205 38% 76%;
-    --secondary-foreground: 210 20% 12%;
+    --secondary-foreground: 210 30% 8%;
 
-    --muted: 205 20% 94%;
-    --muted-foreground: 210 10% 40%;
+    /* Muted dark */
+    --muted: 210 20% 15%;
+    --muted-foreground: 210 10% 60%;
 
+    /* Accent — a subtle green/teal from brand */
     --accent: 144 12% 50%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Highlight — yellow/lime for active indicators */
+    --highlight: 66 100% 50%;
 
-    --border: 205 20% 88%;
-    --input: 205 20% 88%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 210 20% 18%;
+    --input: 210 20% 18%;
     --ring: 205 68% 42%;
 
     --radius: 0.5rem;
 
     --hero-overlay: 210 30% 8%;
 
-    --sidebar-background: 205 68% 42%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 0 0% 100%;
-    --sidebar-primary-foreground: 205 68% 42%;
-    --sidebar-accent: 205 60% 36%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 205 60% 50%;
-    --sidebar-ring: 0 0% 100%;
+    /* Bright blue for color block sections */
+    --block-bright: 199 100% 50%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 210 30% 8%;
+    --sidebar-primary: 205 68% 42%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 66 100% 50%;
+    --sidebar-accent-foreground: 210 30% 8%;
+    --sidebar-border: 210 20% 90%;
+    --sidebar-ring: 205 68% 42%;
   }
 }
 
@@ -72,12 +83,26 @@
     );
   }
 
+  .block-bright {
+    background-color: hsl(var(--block-bright));
+  }
+
   .service-card-hover {
     @apply transition-all duration-300 ease-out;
   }
 
   .service-card-hover:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px -8px hsl(var(--primary) / 0.2);
+    box-shadow: 0 16px 40px -8px hsl(var(--primary) / 0.3);
+  }
+
+  .accent-underline {
+    @apply relative;
+  }
+
+  .accent-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-12 h-1;
+    background-color: hsl(var(--highlight));
   }
 }
