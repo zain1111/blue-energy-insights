@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import { services } from "@/data/services";
+import { ChevronRight } from "lucide-react";
 
 const heroBoxes = [
   { title: "Trusted Expertise", desc: "Decades of combined oilfield experience." },
@@ -23,6 +24,24 @@ const Services = () => {
         setActiveId(hash);
       }, 300);
     }
+  }, []);
+
+  // Intersection observer to track active section
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-20% 0px -60% 0px" }
+    );
+    Object.values(sectionRefs.current).forEach((el) => {
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
   }, []);
 
   const scrollTo = (id: string) => {
@@ -55,28 +74,76 @@ const Services = () => {
       {/* Services Detail Section */}
       <section className="py-16">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row gap-10">
-          {/* Sidebar */}
-          <aside className="lg:w-64 shrink-0">
-            <div className="sticky top-20 bg-primary rounded-lg overflow-hidden">
-              <h3 className="font-heading text-lg font-bold text-primary-foreground px-5 pt-5 pb-3">
-                Services
-              </h3>
-              <ul>
-                {services.map((s) => (
-                  <li key={s.id}>
-                    <button
-                      onClick={() => scrollTo(s.id)}
-                      className={`w-full text-left px-5 py-3 text-sm font-medium transition-colors ${
-                        activeId === s.id
-                          ? "bg-sidebar-accent text-sidebar-accent-foreground"
-                          : "text-primary-foreground/80 hover:bg-sidebar-accent/50"
-                      }`}
-                    >
-                      {s.title}
-                    </button>
-                  </li>
-                ))}
-              </ul>
+          {/* Modern Sidebar */}
+          <aside className="lg:w-72 shrink-0">
+            <div className="sticky top-20">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative overflow-hidden rounded-xl bg-gradient-to-b from-primary to-primary/80 shadow-2xl shadow-primary/20"
+              >
+                {/* Decorative accent line */}
+                <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
+                
+                <div className="px-6 pt-6 pb-4">
+                  <h3 className="font-heading text-xs font-bold tracking-[0.3em] uppercase text-primary-foreground/60">
+                    Services
+                  </h3>
+                  <div className="mt-2 h-px bg-primary-foreground/15" />
+                </div>
+
+                <nav className="pb-4">
+                  {services.map((s, i) => {
+                    const isActive = activeId === s.id;
+                    const Icon = s.icon;
+                    return (
+                      <motion.button
+                        key={s.id}
+                        onClick={() => scrollTo(s.id)}
+                        initial={{ opacity: 0, x: -10 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 0.1 + i * 0.05, duration: 0.3 }}
+                        className={`group relative w-full text-left px-6 py-3.5 flex items-center gap-3 transition-all duration-300 ${
+                          isActive
+                            ? "bg-primary-foreground/15"
+                            : "hover:bg-primary-foreground/8"
+                        }`}
+                      >
+                        {/* Active indicator */}
+                        <AnimatePresence>
+                          {isActive && (
+                            <motion.div
+                              layoutId="activeIndicator"
+                              className="absolute left-0 top-0 bottom-0 w-1 bg-accent"
+                              initial={{ scaleY: 0 }}
+                              animate={{ scaleY: 1 }}
+                              exit={{ scaleY: 0 }}
+                              transition={{ duration: 0.2 }}
+                            />
+                          )}
+                        </AnimatePresence>
+
+                        <Icon className={`h-4 w-4 shrink-0 transition-colors duration-300 ${
+                          isActive ? "text-accent" : "text-primary-foreground/50 group-hover:text-primary-foreground/80"
+                        }`} />
+
+                        <span className={`text-sm font-medium transition-colors duration-300 ${
+                          isActive ? "text-primary-foreground" : "text-primary-foreground/70 group-hover:text-primary-foreground"
+                        }`}>
+                          {s.title}
+                        </span>
+
+                        <ChevronRight className={`h-3.5 w-3.5 ml-auto shrink-0 transition-all duration-300 ${
+                          isActive
+                            ? "opacity-100 translate-x-0 text-accent"
+                            : "opacity-0 -translate-x-2 group-hover:opacity-60 group-hover:translate-x-0 text-primary-foreground/50"
+                        }`} />
+                      </motion.button>
+                    );
+                  })}
+                </nav>
+              </motion.div>
             </div>
           </aside>
 
