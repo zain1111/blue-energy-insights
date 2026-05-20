@@ -28,7 +28,7 @@
     --accent: 144 30% 40%;
     --accent-foreground: 0 0% 100%;
 
-    --highlight: 66 90% 44%;
+    --highlight: 205 68% 42%;
 
     --destructive: 0 72% 48%;
     --destructive-foreground: 0 0% 98%;
@@ -48,7 +48,7 @@
     --sidebar-foreground: 210 30% 12%;
     --sidebar-primary: 205 68% 42%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 66 90% 44%;
+    --sidebar-accent: 205 68% 42%;
     --sidebar-accent-foreground: 210 30% 12%;
     --sidebar-border: 210 18% 88%;
     --sidebar-ring: 205 68% 42%;
