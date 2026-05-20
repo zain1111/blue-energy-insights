@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import Footer from "@/components/Footer";
 import { services } from "@/data/services";
+import heroVideo from "@/assets/C0003.MP4";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <HeroSection
         title="Kashmir Blue Energy"
         subtitle="Expert oilfield services delivering reliable well solutions across the energy sector."
+        videoUrl={heroVideo}
       />
 
       {/* Services Section */}

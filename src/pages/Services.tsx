@@ -114,7 +114,7 @@ const Services = () => {
                     isDark ? "bg-background" : "bg-card"
                   }`}
                 >
-                  <div className="flex items-start gap-5 mb-4">
+                  <div className="flex items-start gap-5 mb-6">
                     <div className="h-14 w-14 bg-primary/10 flex items-center justify-center shrink-0">
                       <Icon className="h-7 w-7 text-primary" />
                     </div>
@@ -122,10 +122,36 @@ const Services = () => {
                       <h2 className="font-heading text-2xl md:text-3xl font-bold text-foreground mb-1">
                         {s.title}
                       </h2>
-                      <div className="w-12 h-1 bg-highlight mb-4" />
-                      <p className="text-muted-foreground leading-relaxed max-w-2xl">{s.description}</p>
+                      <div className="w-12 h-1 bg-highlight" />
                     </div>
                   </div>
+
+                  <div className="space-y-4 max-w-3xl mb-8">
+                    {s.body.map((paragraph, idx) => (
+                      <p key={idx} className="text-muted-foreground leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+
+                  {s.capabilities.length > 0 && (
+                    <div className="max-w-3xl">
+                      <p className="font-heading text-xs font-bold tracking-[0.3em] uppercase text-primary mb-4">
+                        Capabilities
+                      </p>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2">
+                        {s.capabilities.map((capability) => (
+                          <li
+                            key={capability}
+                            className="flex items-start gap-3 text-sm text-foreground"
+                          >
+                            <span className="mt-2 h-1.5 w-1.5 bg-highlight shrink-0" />
+                            <span>{capability}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
               );
             })}
