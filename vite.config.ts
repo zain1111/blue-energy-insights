@@ -12,7 +12,7 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
-  assetsInclude: ["**/*.MP4"],
+  assetsInclude: ["**/*.MP4", "**/*.JPG"],
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {

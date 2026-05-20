@@ -12,9 +12,7 @@ import { toast } from "sonner";
 import { MapPin, Phone } from "lucide-react";
 import { SITE } from "@/config/site";
 import { cn } from "@/lib/utils";
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1920&q=80";
+import contactHeroImage from "@/assets/cDSC00207.JPG";
 
 const formSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -57,7 +55,7 @@ const Contact = () => {
       <Navbar />
 
       <HeroSection
-        imageUrl={HERO_IMAGE}
+        imageUrl={contactHeroImage}
         title="Contact"
         subtitle="Reach our team for sales, support, or general inquiries."
       />

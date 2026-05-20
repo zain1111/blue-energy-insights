@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import { services } from "@/data/services";
+import servicesHeroImage from "@/assets/eDSC00161.JPG";
 
 const heroBoxes = [
   { title: "Trusted Expertise", desc: "Decades of combined oilfield experience." },
@@ -53,7 +54,11 @@ const Services = () => {
       <Navbar />
 
       {/* Hero with animated boxes */}
-      <HeroSection title="Our Services" subtitle="End-to-end well services you can rely on.">
+      <HeroSection
+        imageUrl={servicesHeroImage}
+        title="Our Services"
+        subtitle="End-to-end well services you can rely on."
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 max-w-4xl mx-auto">
           {heroBoxes.map((box, i) => (
             <motion.div

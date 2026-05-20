@@ -3,9 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import { Mail } from "lucide-react";
 import { SITE } from "@/config/site";
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1920&q=80";
+import careersHeroImage from "@/assets/gDSC00146.JPG";
 
 const Careers = () => {
   return (
@@ -13,7 +11,7 @@ const Careers = () => {
       <Navbar />
 
       <HeroSection
-        imageUrl={HERO_IMAGE}
+        imageUrl={careersHeroImage}
         title="Careers"
         subtitle="Build your career with a team committed to excellence in the field."
       />

@@ -2,9 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import Footer from "@/components/Footer";
 import { Check } from "lucide-react";
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1581092918056-0c4c3acd391c?auto=format&fit=crop&w=1920&q=80";
+import safetyHeroImage from "@/assets/aDSC00178.JPG";
 
 const pillars = [
   ["Committed to health & safety", "Demonstrate leadership", "Accountability"],
@@ -17,7 +15,7 @@ const Safety = () => {
       <Navbar />
 
       <HeroSection
-        imageUrl={HERO_IMAGE}
+        imageUrl={safetyHeroImage}
         title="Safety"
         subtitle="Committed to safety"
       />
