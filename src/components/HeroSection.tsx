@@ -10,8 +10,6 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ title, subtitle, children, videoUrl, imageUrl }: HeroSectionProps) => {
-  const defaultVideo = "https://garberbrosinc.com/assets/videos/About.mp4";
-
   return (
     <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-16">
       {imageUrl ? (
@@ -21,7 +19,7 @@ const HeroSection = ({ title, subtitle, children, videoUrl, imageUrl }: HeroSect
           className="absolute inset-0 h-full w-full object-cover"
           aria-hidden
         />
-      ) : (
+      ) : videoUrl ? (
         <video
           autoPlay
           muted
@@ -29,9 +27,9 @@ const HeroSection = ({ title, subtitle, children, videoUrl, imageUrl }: HeroSect
           playsInline
           className="absolute inset-0 h-full w-full object-cover"
         >
-          <source src={videoUrl || defaultVideo} type="video/mp4" />
+          <source src={videoUrl} type="video/mp4" />
         </video>
-      )}
+      ) : null}
 
       {/* Overlay */}
       <div className="absolute inset-0 hero-overlay" />

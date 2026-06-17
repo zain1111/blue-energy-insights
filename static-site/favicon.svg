@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Kashmir Blue Energy">
+  <rect width="32" height="32" rx="7" fill="hsl(205 68% 42%)"/>
+  <text
+    x="16"
+    y="16"
+    dominant-baseline="central"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, 'Segoe UI', sans-serif"
+    font-size="18"
+    font-weight="700"
+    fill="#ffffff"
+  >K</text>
+</svg>
